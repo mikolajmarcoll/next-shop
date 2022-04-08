@@ -17,12 +17,14 @@ interface ProductProps {
 } 
 
 export  const ProductDetails = ({ data: { description, thumbnailUrl, thumbnailAlt, rating,title } }: ProductProps) => (
-      <div className="bg-white p-4">
-        <Image src={thumbnailUrl} alt={thumbnailAlt} layout="responsive" width={16} height={9} objectFit="contain" />
+      <>
+        <div className="bg-white p-4">
+          <Image src={thumbnailUrl} alt={thumbnailAlt} layout="responsive" width={16} height={9} objectFit="contain" />
+        </div>
         <h2 className="p-4 text-3-xl font-bold">{title}</h2>
         <p className="p-4">{description}</p>
         <Rating rating={rating}/>
-      </div>
+      </>
   )
 
   type ProductListItem = Pick<ProductDetails, "id" | "title" | "thumbnailUrl" | "thumbnailAlt"> 
